@@ -10,7 +10,7 @@ namespace MoodTesting
         {
             const string happymood = "Happy";
             const string sadmood = "Sad";
-            MoodAnalser mood = new MoodAnalser();
+            MoodAnalser mood = new MoodAnalser("Happy");
             string AcutalResult = mood.Mood(sadmood);
             string expected = "Sad";
             Assert.AreEqual(expected, AcutalResult);
@@ -20,7 +20,7 @@ namespace MoodTesting
         {
             const string happymood = "Happy";
             const string sadmood = "Sad";
-            MoodAnalser mood = new MoodAnalser();
+            MoodAnalser mood = new MoodAnalser("Happy");
             string AcutalResult = mood.Mood(happymood);
             string expected = "Happy";
             Assert.AreEqual(expected, AcutalResult);

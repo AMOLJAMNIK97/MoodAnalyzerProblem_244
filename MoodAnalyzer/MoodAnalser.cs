@@ -27,5 +27,36 @@ namespace MoodAnalyzer
                 return null;
             }
         }
+
+        private string message;
+        //Parametraiz Constructor
+        public MoodAnalser(string message)
+        {
+            this.message = message;
+        }
+
+
+
+        //UC-2 Using Try Catch Blocks to Handle Null Exception.
+        public string AnalyseMood()
+        {
+            try
+            {
+                if (this.message.ToLower().Contains("sad"))
+                {
+                     
+                    return "SAD";
+                }
+                else
+                {
+                    return "HAPPY";
+                }
+            }
+            catch (NullReferenceException)
+            {
+                return "HAPPY";
+            }
+
+        }
     }
 }
