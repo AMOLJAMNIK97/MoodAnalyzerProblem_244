@@ -37,7 +37,7 @@ namespace MoodAnalyzer
 
 
 
-        //UC-2 Using Try Catch Blocks to Handle Null Exception.
+        //UC-3 Using throw new key word Handling Custom Exception
         public string AnalyseMood()
         {
 
