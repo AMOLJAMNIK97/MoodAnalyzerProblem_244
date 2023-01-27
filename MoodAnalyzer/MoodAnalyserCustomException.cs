@@ -11,7 +11,7 @@ namespace MoodAnalyzer
         public enum ExceptionalType
         {
             NULL_MASSEAGE, EMPTY_MASSAGE,
-            NO_SUCH_CLASS, OBJECT_CREATION_ISSUE
+            NO_SUCH_CLASS, OBJECT_CREATION_ISSUE, NO_SUCH_METHOD
                
         }
         private readonly ExceptionalType Type;

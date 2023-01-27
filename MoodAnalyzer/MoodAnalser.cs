@@ -8,59 +8,37 @@ namespace MoodAnalyzer
 {
     public class MoodAnalser
     {
-        public const string Happy_Mood = "Happy";
-        public const string Sad_Mood = "Sad";
-        public string Mood(string mood)
-        {
-            if (mood.ToLower().Contains("happy"))
-            {
-                Console.WriteLine(Happy_Mood);
-                return mood;
-            }
-            if (mood.ToLower().Contains("sad"))
-            {
-                Console.WriteLine(Sad_Mood);
-                return mood;
-            }
-            else
-            {
-                return null;
-            }
-        }
+        public string message;
 
-        private string message;
-        //Parametraiz Constructor
-        public MoodAnalser(string message)
+        public MoodAnalser()
+        {
+            Console.WriteLine("Default Constructor");
+        }
+        public MoodAnalser(string message)//constructor
         {
             this.message = message;
         }
-
-
-
-        //UC-3 Using throw new key word Handling Custom Exception
-        public string AnalyseMood()
+        public string AnalyseMood() //method to analyse mood
         {
-
             try
             {
-                if (this.message.Equals(string.Empty))
+                if (this.message.Equals(""))
                 {
-                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionalType.EMPTY_MASSAGE, "Mood Should be Not Empty");
+                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionalType.EMPTY_MASSAGE, "Mood should not be empty");
                 }
-                if (this.message.Contains("Sad"))
+                else if (this.message.ToLower().Contains("sad"))
                 {
-                    return "Sad";
+                    return "SAD";
                 }
                 else
                 {
-                    return "Happy";
+                    return "HAPPY";
                 }
             }
-            catch(NullReferenceException)
+            catch (NullReferenceException)
             {
-                throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionalType.NULL_MASSEAGE, "Mood Should be Null");
+                throw new MoodAnalyserCustomException (MoodAnalyserCustomException.ExceptionalType.NULL_MASSEAGE, "Mood should not be null");
             }
-
         }
     }
 }
