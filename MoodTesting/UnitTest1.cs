@@ -25,5 +25,18 @@ namespace MoodTesting
             string expected = "Happy";
             Assert.AreEqual(expected, AcutalResult);
         }
+        //UC-2
+        
+        /// TC2.1Given Null Mood Should Return Happy To make this Test Case pass Handle
+        /// NULL Scenario using try catch and return Happy
+        /// </summary>
+        [TestMethod]
+        public void GivenMessage_WhenNull_ShouldReturnHappy()
+        {
+            MoodAnalser moodAnalser  = new MoodAnalser("Happy");
+            string message = moodAnalser.AnalyseMood();
+            Assert.AreEqual("HAPPY", message);
+        }
+
     }
 }
