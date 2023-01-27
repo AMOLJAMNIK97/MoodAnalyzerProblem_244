@@ -40,21 +40,25 @@ namespace MoodAnalyzer
         //UC-2 Using Try Catch Blocks to Handle Null Exception.
         public string AnalyseMood()
         {
+
             try
             {
-                if (this.message.ToLower().Contains("sad"))
+                if (this.message.Equals(string.Empty))
                 {
-                     
-                    return "SAD";
+                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionalType.EMPTY_MASSAGE, "Mood Should be Not Empty");
+                }
+                if (this.message.Contains("Sad"))
+                {
+                    return "Sad";
                 }
                 else
                 {
-                    return "HAPPY";
+                    return "Happy";
                 }
             }
-            catch (NullReferenceException)
+            catch(NullReferenceException)
             {
-                return "HAPPY";
+                throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionalType.NULL_MASSEAGE, "Mood Should be Null");
             }
 
         }
